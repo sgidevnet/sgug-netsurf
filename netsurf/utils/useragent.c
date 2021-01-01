@@ -48,10 +48,11 @@ user_agent_build_string(void)
                 sysname = un.sysname;
         }
 
-        len = snprintf(NULL, 0, NETSURF_UA_FORMAT_STRING,
+        /*len = snprintf(NULL, 0, NETSURF_UA_FORMAT_STRING,
                        netsurf_version_major,
                        netsurf_version_minor,
-                       sysname);
+                       sysname);*/
+	len = 128;
         ua_string = malloc(len + 1);
         if (!ua_string) {
                 /** \todo this needs handling better */

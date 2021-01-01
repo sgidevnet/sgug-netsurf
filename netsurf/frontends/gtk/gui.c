@@ -120,6 +120,7 @@ nsgtk_init_resource_path(const char *config_home)
 					     "%s:${NETSURFRES}:%s",
 					     config_home,
 					     GTK_RESPATH);
+		resource_path_len = strlen(config_home)+strlen(GTK_RESPATH)+32;
 		resource_path = malloc(resource_path_len + 1);
 		if (resource_path == NULL) {
 			return NULL;
@@ -132,6 +133,7 @@ nsgtk_init_resource_path(const char *config_home)
 		resource_path_len = snprintf(NULL, 0,
 					     "${NETSURFRES}:%s",
 					     GTK_RESPATH);
+		resource_path_len = strlen("${NETSURFRES}:%s")+strlen(GTK_RESPATH);
 		resource_path = malloc(resource_path_len + 1);
 		if (resource_path == NULL) {
 			return NULL;
@@ -201,7 +203,11 @@ static nserror set_defaults(struct nsoption_s *defaults)
 	}
 
 	/* default path to certificates */
+#if defined(__sgi)
+	nsoption_setnull_charp(ca_path, strdup("/usr/sgug/etc/ssl/certs"));
+#else
 	nsoption_setnull_charp(ca_path, strdup("/etc/ssl/certs"));
+#endif
 
 	if ((nsoption_charp(cookie_file) == NULL) ||
 	    (nsoption_charp(cookie_jar) == NULL) ||

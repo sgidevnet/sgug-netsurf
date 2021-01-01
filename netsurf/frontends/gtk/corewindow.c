@@ -62,9 +62,9 @@ static browser_mouse_state nsgtk_cw_gdkbutton_to_nsstate(GdkEventButton *event)
 
 	if (event->type == GDK_2BUTTON_PRESS) {
 		ms = BROWSER_MOUSE_DOUBLE_CLICK;
-	} else {
+	} /* else {
 		ms = BROWSER_MOUSE_HOVER;
-	}
+	} */
 
 	/* button state */
 	switch (event->button) {
