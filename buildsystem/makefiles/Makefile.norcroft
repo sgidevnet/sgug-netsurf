@@ -1,7 +1,9 @@
 # Norcroft specific toolchain setup
 
 CCDEF := -D
-CCOPT := -Otime
+#CCOPT := -Otime
+#CCNOOPT :=
+CCOPT := -ONOPE
 CCNOOPT :=
 CCDBG := -g
 CCINC := -I
@@ -11,8 +13,10 @@ CCAS :=
 CCSHR :=
 
 CXXDEF := -D
-CXXOPT := -O2
-CXXNOOPT := -O0
+#CXXOPT := -O2
+#CXXNOOPT := -O0
+CXXOPT := -ONOPE
+CXXNOOPT := -ONOPE
 CXXDBG := -g
 CXXINC := -I
 CXXLIB := -L

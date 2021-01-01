@@ -3,8 +3,10 @@
 # as clang being mostly GCC-compatible on the command line
 
 CCDEF := -D
-CCOPT := -O2
-CCNOOPT := -O0
+#CCOPT := -O2
+#CCNOOPT := -O0
+CCOPT := -ONOPE
+CCNOOPT := -ONOPE
 CCDBG := -g
 CCINC := -I
 CCLIB := -L
@@ -12,8 +14,10 @@ CCAS := -xassembler-with-cpp
 CCSHR := -fPIC
 
 CXXDEF := -D
-CXXOPT := -O2
-CXXNOOPT := -O0
+#CXXOPT := -O2
+#CXXNOOPT := -O0
+CXXOPT := -ONOPE
+CXXNOOPT := -ONOPE
 CXXDBG := -g
 CXXINC := -I
 CXXLIB := -L
