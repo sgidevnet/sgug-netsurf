@@ -23,7 +23,7 @@ WARNFLAGS := -Wall -W -Wundef -Wpointer-arith -Wcast-align \
 	-Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes \
 	-Wmissing-declarations -Wnested-externs
 
-CFLAGS := -D_GNU_SOURCE -D_DEFAULT_SOURCE \
+CFLAGS := \
 	-I$(CURDIR)/include/ -I$(CURDIR)/src $(WARNFLAGS) $(CFLAGS)
 ifneq ($(GCCVER),2)
   CFLAGS := $(CFLAGS) -std=c99
@@ -31,7 +31,7 @@ else
   # __inline__ is a GCCism
   CFLAGS := $(CFLAGS) -Dinline="__inline__"
 endif
-CFLAGS := $(CFLAGS) -D_POSIX_C_SOURCE=200809L
+#CFLAGS := $(CFLAGS)
 
 REQUIRED_LIBS := nsutils
 

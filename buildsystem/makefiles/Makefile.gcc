@@ -2,8 +2,10 @@
 # We assume that we're using a standard GCC/binutils environment
 
 CCDEF := -D
-CCOPT := -O2
-CCNOOPT := -O0
+#CCOPT := -ONOPE
+#CCNOOPT := -ONOPE
+CCOPT :=
+CCNOOPT :=
 CCDBG := -g
 CCINC := -I
 CCLIB := -L
@@ -11,8 +13,10 @@ CCAS := -xassembler-with-cpp
 CCSHR := -fPIC
 
 CXXDEF := -D
-CXXOPT := -O2
-CXXNOOPT := -O0
+#CXXOPT := -ONOPE
+#CXXNOOPT := -ONOPE
+CXXOPT :=
+CXXNOOPT :=
 CXXDBG := -g
 CXXINC := -I
 CXXLIB := -L

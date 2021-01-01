@@ -23,14 +23,14 @@
 
 /* Try to detect which features the target OS supports */
 
-#if (defined(_GNU_SOURCE) && !defined(__APPLE__) || defined(__amigaos4__) || defined(__HAIKU__) || (defined(_POSIX_C_SOURCE) && ((_POSIX_C_SOURCE - 0) >= 200809L)) && !defined(__riscos__))
+#if (defined(_GNU_SOURCE) && !defined(__APPLE__) || defined(__amigaos4__) || defined(__HAIKU__) || (defined(_POSIX_C_SOURCE) && ((_POSIX_C_SOURCE - 0) >= 200809L)) && !defined(__riscos__) && !defined(__sgi))
 #define HAVE_STRNDUP
 #else
 #undef HAVE_STRNDUP
 char *strndup(const char *s, size_t n);
 #endif
 
-#if (defined(_GNU_SOURCE) || defined(__APPLE__) || defined(__HAIKU__) || defined(__OpenBSD__))
+#if (defined(_GNU_SOURCE) || defined(__APPLE__) || defined(__HAIKU__) || defined(__OpenBSD__) || defined(__sgi))
 #define HAVE_STRCASESTR
 #else
 #undef HAVE_STRCASESTR
@@ -40,7 +40,7 @@ char *strcasestr(const char *haystack, const char *needle);
 /* Although these platforms might have strftime or strptime they
  *  appear not to support the time_t seconds format specifier.
  */
-#if (defined(_WIN32) || defined(__riscos__) || defined(__HAIKU__) || defined(__BEOS__) || defined(__amigaos4__) || defined(__AMIGA__) || defined(__MINT__))
+#if (defined(_WIN32) || defined(__riscos__) || defined(__HAIKU__) || defined(__BEOS__) || defined(__amigaos4__) || defined(__AMIGA__) || defined(__MINT__) || defined(__sgi))
 #undef HAVE_STRPTIME
 #undef HAVE_STRFTIME
 #else

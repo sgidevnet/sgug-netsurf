@@ -29,7 +29,7 @@ endif
 # would like these flags but gcc earlier than 4.4 fail
 #-pedantic -Wno-overlength-strings # For nsglobe.c
 
-CFLAGS := -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200112L \
+CFLAGS := \
 	-I$(CURDIR)/include/ -I$(CURDIR)/src \
 	$(WARNFLAGS) $(CFLAGS)
 # Cope with gcc 2

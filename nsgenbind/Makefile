@@ -32,7 +32,7 @@ ifneq ($(VARIANT),release)
   endif
 endif
 
-CFLAGS := -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L \
+CFLAGS := \
 	-I$(CURDIR)/include/ -I$(CURDIR)/src \
 	$(WARNFLAGS) $(CFLAGS)
 ifneq ($(GCCVER),2)

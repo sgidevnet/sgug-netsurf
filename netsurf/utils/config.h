@@ -23,7 +23,7 @@
 
 /* Try to detect which features the target OS supports */
 
-#if (defined(_GNU_SOURCE) && !defined(__APPLE__) || defined(__amigaos4__) || defined(__HAIKU__) || (defined(_POSIX_C_SOURCE) && ((_POSIX_C_SOURCE - 0) >= 200809L)) && !defined(__riscos__))
+#if (defined(_GNU_SOURCE) && !defined(__APPLE__) || defined(__sgi) || defined(__amigaos4__) || defined(__HAIKU__) || (defined(_POSIX_C_SOURCE) && ((_POSIX_C_SOURCE - 0) >= 200809L)) && !defined(__riscos__))
 #define HAVE_STRNDUP
 #else
 #undef HAVE_STRNDUP

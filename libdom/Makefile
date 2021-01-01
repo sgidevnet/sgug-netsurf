@@ -30,7 +30,7 @@ endif
 ifeq ($(findstring amigaos,$(HOST)),amigaos)
   CFLAGS := -U__STRICT_ANSI__ $(CFLAGS)
 endif
-CFLAGS := -D_BSD_SOURCE -D_DEFAULT_SOURCE \
+CFLAGS := \
 	-I$(CURDIR)/include/ -I$(CURDIR)/src -I$(CURDIR)/binding \
 	$(WARNFLAGS) $(CFLAGS)
 # Some gcc2 versions choke on -std=c99, and it doesn't know about it anyway

@@ -39,4 +39,4 @@ NETSURF_FS_BACKING_STORE := YES
 NETSURF_GTK_MAJOR ?= 2
 
 # Optimisation levels
-CFLAGS += -O2
+#CFLAGS += -ONOPE

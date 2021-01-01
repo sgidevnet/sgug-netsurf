@@ -6,7 +6,9 @@
  *                http://www.opensource.org/licenses/mit-license.php
  */
 
+#if !defined(__sgi)
 #define _XOPEN_SOURCE 500
+#endif
 
 #include <stdbool.h>
 #include <stdlib.h>

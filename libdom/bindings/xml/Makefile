@@ -12,7 +12,7 @@ ifeq ($(WITH_LIBXML_BINDING),yes)
 
   # LibXML 2.6.26 has a bug in its headers that expects _POSIX_C_SOURCE to be 
   # defined. Define it here, even though we don't need it.
-  CFLAGS := $(CFLAGS) -D_POSIX_C_SOURCE
+  CFLAGS := $(CFLAGS)
 
   DO_XML_INSTALL := yes
 endif
