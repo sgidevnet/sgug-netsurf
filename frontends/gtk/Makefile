@@ -44,7 +44,7 @@ $(eval $(call pkg_config_find_and_add,gmodule-2.0,GModule2))
 
 
 CFLAGS += $(GTKCFLAGS)
-LDFLAGS += -lm
+LDFLAGS += -lm -liconv
 
 # ---------------------------------------------------------------------------
 # Target setup
